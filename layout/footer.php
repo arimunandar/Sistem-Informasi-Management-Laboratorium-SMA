@@ -83,7 +83,7 @@
 			<div class="content">
 				<div class="row">
 					<div class="col-md-12">
-						<span class="copyright">&copy; 2015 All Rights Reserved.</span>
+						<span class="copyright">&copy; 2015 All Rights Reserved | Ari Munandar</span>
 
 						<span class="pull-right">
 							<a href="#"><i class="fa fa-facebook"></i></a>
