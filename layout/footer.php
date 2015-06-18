@@ -9,22 +9,17 @@
 							<tr>
 								<td width="40%">Nama</td>
 								<td width="10%">:</td>
-								<td width="50%">Ferdika S</td>
+								<td width="50%">Ari Munandar</td>
 							</tr>
 							<tr>
-								<td width="40%">NPM</td>
+								<td width="40%">Email</td>
 								<td width="10%">:</td>
-								<td width="50%">1110013231121</td>
+								<td width="50%">arimunandar.dev@gmail.com</td>
 							</tr>
 							<tr>
-								<td width="40%">Pembimbing 1</td>
+								<td width="40%">HP</td>
 								<td width="10%">:</td>
-								<td width="50%">Ir. Eddy Soesilo, M.Eng</td>
-							</tr>
-							<tr>
-								<td width="40%">Pembimbing 2</td>
-								<td width="10%">:</td>
-								<td width="50%">Karmila Suryani, M.Kom</td>
+								<td width="50%">+6282384669700</td>
 							</tr>
 						</table>
 					</div>
