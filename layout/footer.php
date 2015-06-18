@@ -24,13 +24,7 @@
 						</table>
 					</div>
 					<div class="col-md-2">
-						<?php 
-							if (!isset($_SESSION['username'])) {
-						?>
-						<img src="assets/img/me.jpg" alt="" style="height:100%;width:100%;padding-top:20%;">
-						<?php
-							}
-						?>						
+											
 					</div>							
 					<div class="col-md-6">
 					<?php 
