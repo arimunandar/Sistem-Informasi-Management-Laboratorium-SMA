@@ -1,4 +1,7 @@
-<?php 	require_once('layout/header.php');	?>
+<?php 	require_once('layout/header.php');	
+		require_once('config/db.php');
+
+?>
 	
 	<!-- BEGIN HOME -->
 	<section id="home" class="page">
@@ -31,9 +34,10 @@
 				</div>
 				<div class="row">
 					<?php 
-						$guru 	=	mysql_query("SELECT * FROM users WHERE access='guru'");
+						$guru =mysqli_query($koneksi,"SELECT * FROM users WHERE access='guru'");
 
-						while ($data=mysql_fetch_array($guru)) {
+						while ($data=mysqli_fetch_array($guru)) {
+							
 					?>
 					<div class="col-md-3">
 						<div class="profile">
@@ -66,9 +70,9 @@
 						<div id="gallery">							
 							<ul class="items popup-gallery list-unstyled clearfix">
 								<?php 
-									$gallery  = mysql_query("SELECT * FROM galeri ORDER BY galeri_tgl DESC");
+									$gallery  = mysqli_query($koneksi,"SELECT * FROM galeri ORDER BY galeri_tgl DESC");
 
-									while ($data=mysql_fetch_array($gallery)) {
+									while ($data=mysqli_fetch_array($gallery)) {
 								?>
 								<li class="item web">
 									<a href="dashboard/<?php echo $data['galeri_link']; ?>" title="Portfolio 1">

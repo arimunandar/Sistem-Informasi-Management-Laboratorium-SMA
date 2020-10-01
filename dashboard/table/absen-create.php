@@ -17,10 +17,11 @@
                             <td width="10%">:</td>
                             <td>
                                 <?php 
+                                require_once('config/db.php');
                                     $kelas  =   $_POST['kelas'];
 
-                                    $sql    =   mysql_query("SELECT * FROM kelas WHERE kelas_id='$kelas'");
-                                    $row    =   mysql_fetch_array($sql);
+                                    $sql    =   mysqli_query($koneksi,"SELECT * FROM kelas WHERE kelas_id='$kelas'");
+                                    $row    =   mysqli_fetch_array($sql);
 
                                     echo $row['kelas_nama'];
                                 ?>
@@ -55,11 +56,11 @@
                                     $no         =   1;
                                     $kelas      =   $_POST['kelas'];
                                     $tanggal  =   $_POST['tanggal'];
-                                    $absen    =   mysql_query("SELECT users.id, users.name, users.access, kelas.kelas_nama FROM users
+                                    $absen    =   mysqli_query($koneksi,"SELECT users.id, users.name, users.access, kelas.kelas_nama FROM users
                                                                 INNER JOIN kelas ON users.kelas_id=kelas.kelas_id
                                                                 WHERE kelas.kelas_id='$kelas' AND users.access='siswa'
                                                                 ");
-                                    while ($data=mysql_fetch_array($absen)) {
+                                    while ($data=mysqli_fetch_array($absen)) {
                             ?>
                             <tr>
                                 <td><?php echo $no; ?></td>

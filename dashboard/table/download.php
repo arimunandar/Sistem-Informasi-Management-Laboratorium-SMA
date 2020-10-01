@@ -26,9 +26,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$alat 		=	mysql_query("SELECT * FROM download ");
+							$alat 		=	mysqli_query($koneksi,"SELECT * FROM download ");
 
-							while ($data=mysql_fetch_array($alat)) {
+							while ($data=mysqli_fetch_array($alat)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

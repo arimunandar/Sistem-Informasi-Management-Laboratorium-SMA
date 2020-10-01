@@ -33,9 +33,10 @@
 						<div class="col-md-4">
 							<select class="form-control" name="jam" required>
 								<?php 
-									$jam  	=	mysql_query("SELECT * FROM jam");
+								require_once('config/db.php');
+									$jam  	=	mysqli_query($koneksi,"SELECT * FROM jam");
 
-									while ($data=mysql_fetch_array($jam)) {
+									while ($data=mysqli_fetch_array($jam)) {
 								?>
 								<option value="<?php echo $data['jam_id']; ?>"><?php echo $data['jam_nama']; ?></option>
 								<?php
@@ -86,13 +87,13 @@ END BASIC FORM
                     <tbody>
                         <?php 
                                 $no             =   1;
-                                $jadwal         =   mysql_query("SELECT jadwal.jadwal_id, jam.jam_nama, jadwal.jadwal_tanggal, users.name, kelas.kelas_nama 
+                                $jadwal         =   mysqli_query($koneksi,"SELECT jadwal.jadwal_id, jam.jam_nama, jadwal.jadwal_tanggal, users.name, kelas.kelas_nama 
                                                                 FROM jadwal
                                                                 INNER JOIN jam ON jadwal.jam_id=jam.jam_id
                                                                 INNER JOIN users ON jadwal.id=users.id
                                                                 INNER JOIN kelas ON jadwal.kelas_id=kelas.kelas_id
                                                                 ORDER BY jadwal.jadwal_tanggal DESC");
-                                while ($data=mysql_fetch_array($jadwal)) { 
+                                while ($data=mysqli_fetch_array($jadwal)) { 
                         ?>
                         <tr>
                             <td><?php echo $no; ?></td>

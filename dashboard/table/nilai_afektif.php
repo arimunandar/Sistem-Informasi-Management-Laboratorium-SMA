@@ -17,10 +17,11 @@
                             <td width="10%">:</td>
                             <td>
                                 <?php 
+                                require_once('config/db.php');
                                     $kelas  =   $_POST['kelas'];
 
-                                    $sql    =   mysql_query("SELECT * FROM kelas WHERE kelas_id='$kelas'");
-                                    $row    =   mysql_fetch_array($sql);
+                                    $sql    =   mysqli_query($koneksi,"SELECT * FROM kelas WHERE kelas_id='$kelas'");
+                                    $row    =   mysqli_fetch_array($sql);
 
                                     echo $row['kelas_nama'];
                                 ?>
@@ -33,8 +34,8 @@
                                 <?php 
                                     $semester  =   $_POST['semester'];
 
-                                    $sql    =   mysql_query("SELECT * FROM semester WHERE semester_id='$semester'");
-                                    $row    =   mysql_fetch_array($sql);
+                                    $sql    =   mysqli_query($koneksi,"SELECT * FROM semester WHERE semester_id='$semester'");
+                                    $row    =   mysqli_fetch_array($sql);
 
                                     echo $row['semester_nama'];
                                 ?>
@@ -47,8 +48,8 @@
                                 <?php 
                                     $tahun  =   $_POST['tahun'];
 
-                                    $sql    =   mysql_query("SELECT * FROM tahun WHERE tahun_id='$tahun'");
-                                    $row    =   mysql_fetch_array($sql);
+                                    $sql    =   mysqli_query($koneksi,"SELECT * FROM tahun WHERE tahun_id='$tahun'");
+                                    $row    =   mysqli_fetch_array($sql);
 
                                     echo $row['tahun_nama'];
                                 ?>
@@ -76,11 +77,11 @@
                                     $tahun      =   $_POST['tahun'];
                                     $jenis      =   1;
 
-                                    $afektif    =   mysql_query("SELECT users.id, users.name, users.access, kelas.kelas_nama FROM users
+                                    $afektif    =   mysqli_query($koneksi,"SELECT users.id, users.name, users.access, kelas.kelas_nama FROM users
                                                                 INNER JOIN kelas ON users.kelas_id=kelas.kelas_id
                                                                 WHERE kelas.kelas_id='$kelas' AND users.access='siswa'
                                                                 ");
-                                    while ($data=mysql_fetch_array($afektif)) {
+                                    while ($data=mysqli_fetch_array($afektif)) {
                             ?>
                             <tr>
                                 <td><?php echo $no; ?></td>

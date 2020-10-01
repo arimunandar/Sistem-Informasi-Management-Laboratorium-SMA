@@ -126,7 +126,7 @@
                                 $no         =   1;
                                 $id       =   $_SESSION['id'];
 
-                                $nilai      =   mysql_query("SELECT AVG(nilai_poin) AS nilai, users.name, semester.semester_nama,
+                                $nilai      =   mysqli_query($koneksi,"SELECT AVG(nilai_poin) AS nilai, users.name, semester.semester_nama,
                                 							tahun.tahun_nama
                                 							FROM nilai
                                 							INNER JOIN users ON nilai.id=users.id
@@ -134,7 +134,7 @@
                                 							INNER JOIN tahun ON nilai.tahun_id=tahun.tahun_id
                                                             WHERE users.id='$id' AND semester.semester_id='$semester' AND tahun.tahun_id='$tahun'
                                                             ");
-                                while ($data=mysql_fetch_array($nilai)) {
+                                while ($data=mysqli_fetch_array($nilai)) {
                             ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
@@ -181,9 +181,9 @@
 						<div class="col-md-4">
 							<select class="form-control" name="semester" required>
 								<?php 
-									$semester  	=	mysql_query("SELECT * FROM semester");
+									$semester  	=	mysqli_query("$koneksi,SELECT * FROM semester");
 
-									while ($data=mysql_fetch_array($semester)) {
+									while ($data=mysqli_fetch_array($semester)) {
 								?>
 								<option value="<?php echo $data['semester_id']; ?>"><?php echo $data['semester_nama']; ?></option>
 								<?php
@@ -197,9 +197,9 @@
 						<div class="col-md-4">
 							<select class="form-control" name="tahun" required>
 								<?php 
-									$tahun  	=	mysql_query("SELECT * FROM tahun");
+									$tahun  	=	mysqli_query($koneksi,"SELECT * FROM tahun");
 
-									while ($data=mysql_fetch_array($tahun)) {
+									while ($data=mysqli_fetch_array($tahun)) {
 								?>
 								<option value="<?php echo $data['tahun_id']; ?>"><?php echo $data['tahun_nama']; ?></option>
 								<?php

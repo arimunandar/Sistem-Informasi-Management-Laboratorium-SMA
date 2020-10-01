@@ -29,9 +29,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$siswa 		=	mysql_query("SELECT *, kelas.kelas_nama FROM users INNER JOIN kelas ON users.kelas_id=kelas.kelas_id WHERE access='siswa'");
+							$siswa 		=	mysqli_query($koneksi,"SELECT *, kelas.kelas_nama FROM users INNER JOIN kelas ON users.kelas_id=kelas.kelas_id WHERE access='siswa'");
 
-							while ($data=mysql_fetch_array($siswa)) {
+							while ($data=mysqli_fetch_array($siswa)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

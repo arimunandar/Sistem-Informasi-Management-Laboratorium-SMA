@@ -23,9 +23,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$tahun 		=	mysql_query("SELECT * FROM tahun ");
+							$tahun 		=	mysqli_query($koneksi,"SELECT * FROM tahun ");
 
-							while ($data=mysql_fetch_array($tahun)) {
+							while ($data=mysqli_fetch_array($tahun)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

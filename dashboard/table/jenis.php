@@ -23,9 +23,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$jenis 		=	mysql_query("SELECT * FROM jenisnilai ");
+							$jenis 		=	mysqli_query($koneksi,"SELECT * FROM jenisnilai ");
 
-							while ($data=mysql_fetch_array($jenis)) {
+							while ($data=mysqli_fetch_array($jenis)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

@@ -37,9 +37,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$bahan 		=	mysql_query("SELECT * FROM bahan ");
+							$bahan 		=	mysqli_query($koneksi,"SELECT * FROM bahan ");
 
-							while ($data=mysql_fetch_array($bahan)) {
+							while ($data=mysqli_fetch_array($bahan)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

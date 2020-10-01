@@ -23,9 +23,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$galeri 		=	mysql_query("SELECT * FROM galeri ");
+							$galeri 		=	mysqli_query($koneksi,"SELECT * FROM galeri ");
 
-							while ($data=mysql_fetch_array($galeri)) {
+							while ($data=mysqli_fetch_array($galeri)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

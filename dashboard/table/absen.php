@@ -1,4 +1,5 @@
 <?php 
+require_once('config/db.php');
     if (isset($_POST['cari-absen'])) {
         include('table/tampil_absen.php');
     }elseif (isset($_POST['create-absen'])) {        
@@ -35,9 +36,9 @@
                             <select class="form-control" name="kelas" required>
                                 <?php 
                                     //$kel      =   $_SESSION['kelas'];  
-                                    $kelas    =   mysql_query("SELECT * FROM kelas");
+                                    $kelas    =   mysqli_query($koneksi,"SELECT * FROM kelas");
 
-                                    while ($data=mysql_fetch_array($kelas)) {
+                                    while ($data=mysqli_fetch_array($kelas)) {
                                 ?>
                                 <option value="<?php echo $data['kelas_id']; ?>"><?php echo $data['kelas_nama']; ?></option>
                                 <?php

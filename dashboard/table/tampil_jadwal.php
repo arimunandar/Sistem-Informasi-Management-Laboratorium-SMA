@@ -25,19 +25,20 @@
                     </thead>
                     <tbody>
                         <?php 
+                        include 'config/db.php';
                             if (isset($_POST['cari-jadwal'])) {
                                 $no             =   1;
                                 $tanggal        =   $_POST['tanggal'];
                                 $jam            =   $_POST['jam'];
                                 $name           =   $_SESSION['name'];
 
-                                $jadwal         =   mysql_query("SELECT jadwal.jadwal_id, jam.jam_nama, jadwal.jadwal_tanggal, users.name, kelas.kelas_nama 
+                                $jadwal         =   mysqli_query($koneksi,"SELECT jadwal.jadwal_id, jam.jam_nama, jadwal.jadwal_tanggal, users.name, kelas.kelas_nama 
                                                                 FROM jadwal
                                                                 INNER JOIN jam ON jadwal.jam_id=jam.jam_id
                                                                 INNER JOIN users ON jadwal.id=users.id
                                                                 INNER JOIN kelas ON users.kelas_id=kelas.kelas_id
                                                                 WHERE jam.jam_id='$jam' AND jadwal.jadwal_tanggal='$tanggal'");
-                                while ($data=mysql_fetch_array($jadwal)) { 
+                                while ($data=mysqli_fetch_array($jadwal)) { 
                         ?>
                         <tr>
                             <td><?php echo $no; ?></td>

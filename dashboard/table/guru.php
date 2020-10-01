@@ -28,9 +28,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$guru 		=	mysql_query("SELECT * FROM users WHERE access='guru'");
+							$guru 		=	mysqli_query($koneksi,"SELECT * FROM users WHERE access='guru'");
 
-							while ($data=mysql_fetch_array($guru)) {
+							while ($data=mysqli_fetch_array($guru)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>
