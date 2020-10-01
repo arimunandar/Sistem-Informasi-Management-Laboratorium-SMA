@@ -26,11 +26,11 @@
                         <?php
                             $no             =   1;
 
-                            $jadwal         =   mysql_query("SELECT jadwal.jadwal_id, jam.jam_nama, jadwal.jadwal_tanggal, users.name, kelas.kelas_nama, kelas.kelas_id 
+                            $jadwal         =   mysqli_query($koneksi,"SELECT jadwal.jadwal_id, jam.jam_nama, jadwal.jadwal_tanggal, users.name, kelas.kelas_nama, kelas.kelas_id 
                                                             FROM jadwal INNER JOIN jam ON jadwal.jam_id=jam.jam_id 
                                                             INNER JOIN users ON jadwal.id=users.id 
                                                             INNER JOIN kelas ON users.kelas_id=kelas.kelas_id");
-                            while ($data=mysql_fetch_array($jadwal)) { 
+                            while ($data=mysqli_fetch_array($jadwal)) { 
                         ?>
                         <tr>
                             <td><?php echo $no; ?></td>

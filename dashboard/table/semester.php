@@ -23,9 +23,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$semester	=	mysql_query("SELECT * FROM semester ");
+							$semester	=	mysqli_query($koneksi,"SELECT * FROM semester ");
 
-							while ($data=mysql_fetch_array($semester)) {
+							while ($data=mysqli_fetch_array($semester)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

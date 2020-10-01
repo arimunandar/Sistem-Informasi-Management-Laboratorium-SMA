@@ -26,10 +26,11 @@
 					</thead>
 					<tbody>
 						<?php 
+						require_once('config/db.php');
 							$no 		=	1;
-							$admin 		=	mysql_query("SELECT * FROM users WHERE access='admin'");
+							$admin 		=	mysqli_query($koneksi,"SELECT * FROM users WHERE access='admin'");
 
-							while ($data=mysql_fetch_array($admin)) {
+							while ($data=mysqli_fetch_array($admin)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

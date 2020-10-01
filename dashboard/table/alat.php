@@ -37,9 +37,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$alat 		=	mysql_query("SELECT * FROM alat ");
+							$alat 		=	mysqli_query($konekssi,"SELECT * FROM alat ");
 
-							while ($data=mysql_fetch_array($alat)) {
+							while ($data=mysqli_fetch_array($alat)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

@@ -27,13 +27,13 @@
                             $no             =   1;
                             $kelas          =   $_POST['kelas'];
                             $tanggal        =   $_POST['tanggal'];
-                            $absen          =   mysql_query("SELECT absen.absen_id, absen.absen_tgl, absen.absen_ket, users.name, kelas.kelas_nama, kelas.kelas_id
+                            $absen          =   mysqli_query($koneksi,"SELECT absen.absen_id, absen.absen_tgl, absen.absen_ket, users.name, kelas.kelas_nama, kelas.kelas_id
                                                             FROM absen
                                                             INNER JOIN users ON absen.id=users.id
                                                             INNER JOIN kelas ON users.kelas_id=kelas.kelas_id
                                                             WHERE kelas.kelas_id='$kelas' AND absen.absen_tgl='$tanggal'
                                                             ORDER BY absen.absen_tgl ASC");
-                            while ($data=mysql_fetch_array($absen)) { 
+                            while ($data=mysqli_fetch_array($absen)) { 
                         ?>
                         <tr>
                             <td><?php echo $no; ?></td>

@@ -23,9 +23,9 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$jam 		=	mysql_query("SELECT * FROM jam ");
+							$jam 		=	mysqli_query($koneksi,"SELECT * FROM jam ");
 
-							while ($data=mysql_fetch_array($jam)) {
+							while ($data=mysqli_fetch_array($jam)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

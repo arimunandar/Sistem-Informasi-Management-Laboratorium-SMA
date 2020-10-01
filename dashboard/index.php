@@ -35,8 +35,9 @@
 									<div class="grid-body">
 										<span class="title">ADMIN</span>
 										<?php 
-											$users 		=	mysql_query("SELECT COUNT(name) AS total FROM users WHERE access='admin'");
-											$data 		=	mysql_fetch_array($users);
+											$users 		=	mysqli_query($koneksi,"SELECT COUNT(name) AS total FROM users WHERE access='admin'");
+											$data 		=	mysqli_fetch_array($users);
+											
 										?>
 										<span class="value"><?php echo $data['total']; ?></span>
 									</div>
@@ -47,8 +48,8 @@
 									<div class="grid-body">
 										<span class="title">GURU</span>
 										<?php 
-											$guru 		=	mysql_query("SELECT COUNT(name) AS total FROM users WHERE access='guru'");
-											$data 		=	mysql_fetch_array($guru);
+											$guru 		=	mysqli_query($koneksi,"SELECT COUNT(name) AS total FROM users WHERE access='guru'");
+											$data 		=	mysqli_fetch_array($guru);
 										?>
 										<span class="value"><?php echo $data['total']; ?></span>
 									</div>
@@ -59,8 +60,8 @@
 									<div class="grid-body">
 										<span class="title">SISWA</span>
 										<?php 
-											$siswa 		=	mysql_query("SELECT COUNT(name) AS total FROM users WHERE access='siswa'");
-											$data 		=	mysql_fetch_array($siswa);
+											$siswa 		=	mysqli_query($koneksi,"SELECT COUNT(name) AS total FROM users WHERE access='siswa'");
+											$data 		=	mysqli_fetch_array($siswa);
 										?>
 										<span class="value"><?php echo $data['total']; ?></span>
 									</div>
@@ -71,8 +72,8 @@
 									<div class="grid-body">
 										<span class="title">ALAT</span>
 										<?php 
-											$alat 		=	mysql_query("SELECT COUNT(alat_nama) AS total FROM alat");
-											$data 		=	mysql_fetch_array($alat);
+											$alat 		=	mysqli_query($koneksi,"SELECT COUNT(alat_nama) AS total FROM alat");
+											$data 		=	mysqli_fetch_array($alat);
 										?>
 										<span class="value"><?php echo $data['total']; ?></span>
 									</div>
@@ -83,8 +84,8 @@
 									<div class="grid-body">
 										<span class="title">BAHAN</span>
 										<?php 
-											$bahan 		=	mysql_query("SELECT COUNT(bahan_nama) AS total FROM bahan");
-											$data 		=	mysql_fetch_array($bahan);
+											$bahan 		=	mysqli_query($koneksi,"SELECT COUNT(bahan_nama) AS total FROM bahan");
+											$data 		=	mysqli_fetch_array($bahan);
 										?>
 										<span class="value"><?php echo $data['total']; ?></span>
 									</div>
@@ -95,8 +96,8 @@
 									<div class="grid-body">
 										<span class="title">MODUL</span>
 										<?php 
-											$alat 		=	mysql_query("SELECT COUNT(nama_file) AS total FROM download");
-											$data 		=	mysql_fetch_array($alat);
+											$alat 		=	mysqli_query($koneksi,"SELECT COUNT(nama_file) AS total FROM download");
+											$data 		=	mysqli_fetch_array($alat);
 										?>
 										<span class="value"><?php echo $data['total']; ?></span>
 									</div>

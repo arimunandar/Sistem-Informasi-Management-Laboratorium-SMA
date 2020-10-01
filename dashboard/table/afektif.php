@@ -28,7 +28,7 @@
 					<tbody>
 						<?php 
 							$no 		=	1;
-							$nilai 		=	mysql_query("SELECT nilai.nilai_id, nilai.nilai_poin, users.name, users.access, jenisnilai.jenis_nama, kelas.kelas_nama, semester.semester_nama, tahun.tahun_nama
+							$nilai 		=	mysqli_query($koneksi,"SELECT nilai.nilai_id, nilai.nilai_poin, users.name, users.access, jenisnilai.jenis_nama, kelas.kelas_nama, semester.semester_nama, tahun.tahun_nama
 														FROM nilai
 														INNER JOIN users ON nilai.id=users.id
 														INNER JOIN kelas ON users.kelas_id=kelas.kelas_id
@@ -38,7 +38,7 @@
 														WHERE jenisnilai.jenis_id=1 AND users.access='siswa'
 														ORDER BY nilai.nilai_id ASC");
 
-							while ($data=mysql_fetch_array($nilai)) {
+							while ($data=mysqli_fetch_array($nilai)) {
 						?>
 						<tr>
 							<td><center><?php echo $no; ?></center></td>

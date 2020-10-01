@@ -27,9 +27,9 @@
                             <td width="30px">:</td>
                             <?php 
                             	$name 	=	$_SESSION['name'];
-                            	$siswa 	=	mysql_query("SELECT nomor_induk FROM users WHERE name='$name'");
+                            	$siswa 	=	mysqli_query($koneksi,"SELECT nomor_induk FROM users WHERE name='$name'");
 
-                            	$data 	=	mysql_fetch_array($siswa);
+                            	$data 	=	mysqli_fetch_array($siswa);
                             ?>
                             <td><?php echo $data['nomor_induk']; ?></td>
                         </tr>
@@ -39,9 +39,9 @@
                             <td>
                             	<?php 
                             		$k = $_SESSION['kelas']; 
-                            		$kelas = mysql_query("SELECT * FROM kelas WHERE kelas_id='$k'");
+                            		$kelas = mysqli_query($koneksi,"SELECT * FROM kelas WHERE kelas_id='$k'");
 
-                            		$data = mysql_fetch_array($kelas);
+                            		$data = mysqli_fetch_array($kelas);
 
                             		echo $data['kelas_nama'];
                             	?>
@@ -65,7 +65,7 @@
                                 $no         =   1;
                                 $id       =   $_SESSION['id'];
 
-                                $nilai      =   mysql_query("SELECT AVG(nilai_poin) AS nilai, users.name, semester.semester_nama,
+                                $nilai      =   mysqli_query($koneksi,"SELECT AVG(nilai_poin) AS nilai, users.name, semester.semester_nama,
                                 							tahun.tahun_nama
                                 							FROM nilai
                                 							INNER JOIN users ON nilai.id=users.id
@@ -73,7 +73,7 @@
                                 							INNER JOIN tahun ON nilai.tahun_id=tahun.tahun_id
                                                             WHERE users.id='$id' AND semester.semester_id='$semester' AND tahun.tahun_id='$tahun'
                                                             ");
-                                while ($data=mysql_fetch_array($nilai)) {
+                                while ($data=mysqli_fetch_array($nilai)) {
                             ?>
                             <tr>
                                 <td><?php echo $no; ?></td>

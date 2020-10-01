@@ -5,8 +5,8 @@
 	if(isset($_POST['signin'])){
 		$user 		= 	$_POST['username'];
 		$pass 		= 	$_POST['password'];
-		$hasil 		= 	mysql_query("SELECT * FROM users WHERE username='$user' AND password='$pass'");
-		$data 		= 	mysql_fetch_array($hasil);
+		$hasil 		= 	mysqli_query($koneksi,"SELECT * FROM users WHERE username='$user' AND password='$pass'");
+		$data 		= 	mysqli_fetch_array($hasil);
 		$id 		= 	$data['id'];
 		$username 	= 	$data['username'];
 		$password 	= 	$data['password'];
